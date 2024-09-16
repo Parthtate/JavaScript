@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures</title>
+</head>
+<body style="background-color: #313131; color: #fff;">
+    <h3>Closures</h3>
+    <p>
+        A closure is the combination of a function bundled together (enclosed) with references to its surrounding 
+        state (the lexical environment). In other words, a closure gives you access to an outer function's scope 
+        from an inner function. In JavaScript, closures are created every time a function is created, at function 
+        creation time</p>
+
+        <button id="orange">orange</button>
+        <button id="green">green</button>
+</body>
+<script>
+    // Lexical Scope:
+    /*
+    function outer(){
+        let username = "parth";
+        // console.log(secret); // cannot access from child.
+
+        function inner(){
+            let secret = "my213"
+            console.log(username);
+        }
+
+        function innerTwo(){
+            // console.log(secret); // cannot access.
+            console.log(username);
+        }
+        inner();
+        innerTwo();
+    }
+
+    outer();
+    */
+</script>
+
+<script>
+    // Closure: when use return keyword,whole Lexical Scope get access. 
+
+    function makeFunc(){
+        const name = "Mozilla";
+
+        function displayName(){
+            console.log(name);
+        }
+        return displayName;
+
+    }
+    const myFunc = makeFunc();
+    myFunc();
+    
+    // document.querySelector('#orange').onclick = function(){
+    //     document.body.style.backgroundColor = 'orange';
+    // }
+    // document.querySelector('#green').onclick = function(){
+    //     document.body.style.backgroundColor = 'green';
+    // };
+
+    // what if user give 500 button, we use function.
+
+    function changeColor(color){
+        
+        return function(){
+            document.body.style.backgroundColor = `${color}`
+        }
+    }
+
+    document.getElementById("green").onclick = changeColor("green")
+    document.getElementById("orange").onclick = changeColor("orange")
+    
+</script>
+</html>
