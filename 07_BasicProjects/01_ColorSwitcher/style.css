@@ -1,0 +1,34 @@
+.button {
+  height: 100px;
+  width: 100px;
+  border: solid black 2px;
+  display: inline-block;
+  
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#grey {
+  background-color: gray;
+}
+#white {
+  background-color: white;
+}
+#blue {
+  background-color: blue;
+}
+#yellow {
+  background-color: yellow;
+}
+
+h3 {
+  text-align: center;
+}
+
+h2, h1 {
+  text-align: center;
+}
