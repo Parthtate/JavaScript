@@ -1,0 +1,25 @@
+** About JavaScript:
+1. JavaScript is always Synchronoue run language(By default).
+2. It is single threaded language(at single executed).
+3. it is a default JavaScript.
+
+** Exection Context.
+1. execute one line of code at a time. (one by one execute). Each operation waits for the last one to complete before execting.
+
+console.log(1)
+console.log(2)
+
+call stack && Memoery Heap store.
+
+** 2 types we can write program in js.
+** Blocking code vs Non-Blocking code.
+they have depend on use-case Blocking code or Non-Blocking code.
+
+1. Blocking code: 
+=> block the flow of the program.(read file Sync.)
+
+2. Non-blocking code.
+=> does not block the code.(Read file Async.)
+
+
+Shyad kuch logo ko confusion ho jaye is liye yaha likh rha hu. JS asynchronous language h but uska default behaviour synchronous hota h. Us behavior ko hame forcefully bta kr async bnana pdta h. Sbse easy example h aapke settimeout or setinterval methods. Hope aur clear ho gya h ab
