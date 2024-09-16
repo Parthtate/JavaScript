@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff;" >
+
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+    
+</body>
+<script>
+   // Adding elements in <li> tag.
+
+    function addLangName (langName){
+       const li = document.createElement('li');
+       console.log(li);
+       li.innerHTML = `${langName}`;
+
+       const addElement =  document.querySelector('.language');
+       addElement.appendChild(li);
+    }
+
+    addLangName("python")
+    addLangName("typescript")
+
+    // Above method travels whole tree for adding content. same work use different approach.
+
+    function addOptiLang(langName) {
+       const li = document.createElement('li');
+       li.appendChild(document.createTextNode(langName));
+       document.querySelector('.language').appendChild(li);
+    }
+    addOptiLang('golang');
+
+    // Edit value:
+    const firstLang = document.querySelector('li:first-child');
+    firstLang.outerHTML = '<li>TypeScript</li>' 
+    // or
+
+    const secondLang = document.querySelector('li:nth-child(2)');
+    secondLang.innerHTML = 'Mojo';
+
+    // remove:
+    const lastLang = document.querySelector('li:last-child');
+    lastLang.remove()
+
+</script>
+</html>
